@@ -8,7 +8,6 @@
         <!--Navigation Controller-->
         <scene sceneID="1wT-i0-MrX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gci-HW-uV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="SqN-nG-Dmm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WGS-8h-95P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -18,6 +17,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dPK-pT-IZz"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gci-HW-uV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-402" y="346"/>
         </scene>
@@ -91,7 +91,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wZ3-T1-dWw">
-                                        <rect key="frame" x="178" y="49" width="127" height="32"/>
+                                        <rect key="frame" x="141" y="49" width="164" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
@@ -148,7 +148,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="74.133333333333326" y="346.95333333333332"/>
+            <point key="canvasLocation" x="74" y="346"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Iyf-az-ZK2">
@@ -180,8 +180,7 @@
                                         </segments>
                                         <color key="tintColor" red="0.078516244890000003" green="0.40213549139999999" blue="0.64457619190000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="defaultTip:" destination="fGP-lA-R7T" eventType="valueChanged" id="cqd-uV-Cdp"/>
-                                            <action selector="onEditingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3el-hu-5vj"/>
+                                            <action selector="onSetTipControl:" destination="fGP-lA-R7T" eventType="valueChanged" id="mMs-87-cVT"/>
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
@@ -213,12 +212,22 @@
                                 <color key="textColor" red="0.49808174370000002" green="0.5795009136" blue="0.64516144990000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="Vmn-uW-tf5">
+                                <rect key="frame" x="113" y="218" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30717933177947998" green="0.50741583108901978" blue="0.68701279163360596" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onSetTIpStepper:" destination="fGP-lA-R7T" eventType="valueChanged" id="FPa-dm-Hgf"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Syw-kE-Hsf"/>
                     <connections>
-                        <outlet property="tipDefault" destination="uBa-Dy-8sA" id="99d-dC-n8A"/>
+                        <outlet property="setTipControl" destination="uBa-Dy-8sA" id="lI0-NA-eCc"/>
+                        <outlet property="setTipStepper" destination="Vmn-uW-tf5" id="0pg-bu-wqK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gR1-QJ-3sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
