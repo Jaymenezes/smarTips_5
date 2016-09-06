@@ -19,6 +19,7 @@ class ViewController: UIViewController
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tipPercentageView: UIView!
+    @IBOutlet weak var splitOptionsView: UIView!
     
     var tipPercentages = [0.18, 0.20, 0.22]
     
@@ -59,8 +60,9 @@ class ViewController: UIViewController
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         print("view will appear")
+               refreshTipPercentages()
 
-        
+        print("refreshed tips")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -88,6 +90,9 @@ class ViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+
+
+    
     func animation() {
         if (billField.text ==  "0") || (billField.text == "") {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
@@ -97,7 +102,7 @@ class ViewController: UIViewController
             
         } else {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -115)
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -130)
                 }, completion: nil)
         }
     }
@@ -125,10 +130,49 @@ class ViewController: UIViewController
         
     }
     
+    func animateOnTap() {
+        if (billField.text >= "1") {
+            UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -200)
+                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, -200)
+                
+                }, completion: nil)
+            
+        } else {
+            UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 0)
+                 self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 200)
+                }, completion: nil)
+        }
+    }
+    
+    
+
+    @IBAction func onSwipeDown(sender: AnyObject) {
+        
+        
+        if (billField.text >= "1") {
+            UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+                
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 40)
+                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 40)
+                
+                }, completion: nil)
+
+        
+//        self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 50)
+//        print("swipe worked")
+    }
+    }
     @IBAction func onTap(sender: AnyObject)
     {view.endEditing(true)
+        
+        animateOnTap()
 //        smarTitle.hidden = true
 //        tipTiltle.hidden = true
+        
+        
+        
     }
     
     
@@ -154,6 +198,8 @@ class ViewController: UIViewController
         
         tipControl.selectedSegmentIndex = Int(selectedSegment!)!
     }
+    
+    
     
     func refreshTipPercentages(){
         var tipLow = NSUserDefaults.standardUserDefaults().stringForKey("tip_low")

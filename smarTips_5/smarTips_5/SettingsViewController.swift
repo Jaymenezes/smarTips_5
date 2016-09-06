@@ -19,6 +19,12 @@ class SettingsViewController: UIViewController {
         
         print("view did load")
         
+        
+        let now = NSDate()
+        let before = NSUserDefaults.standardUserDefaults().objectForKey("saved_time") as? NSDate
+        
+        if (before != nil && now.timeIntervalSinceDate(before!) < 600){
+           refreshTipPercentages()}
 
         // Do any additional setup after loading the view.
     }
@@ -40,6 +46,11 @@ class SettingsViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         print("view will disappear")
+        //        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "saved_time")
+        //        NSUserDefaults.standardUserDefaults().setObject(setTipControl.selectedSegmentIndex, forKey: "low_tip")
+        //        NSUserDefaults.standardUserDefaults().setObject(setTipControl.selectedSegmentIndex, forKey: "selected_segment")
+        //                NSUserDefaults.standardUserDefaults().setObject(setTipControl.selectedSegmentIndex, forKey: "selected_segment")
+        saveValues()
         
 
     }
@@ -47,13 +58,7 @@ class SettingsViewController: UIViewController {
         super.viewDidDisappear(animated)
         print("view did disappear")
         
-        //        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "saved_time")
-        //        NSUserDefaults.standardUserDefaults().setObject(setTipControl.selectedSegmentIndex, forKey: "low_tip")
-        //        NSUserDefaults.standardUserDefaults().setObject(setTipControl.selectedSegmentIndex, forKey: "selected_segment")
-        //                NSUserDefaults.standardUserDefaults().setObject(setTipControl.selectedSegmentIndex, forKey: "selected_segment")
-        
-        NSUserDefaults.standardUserDefaults().synchronize()
-        saveValues()
+
     }
 
 
@@ -104,22 +109,11 @@ class SettingsViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setObject(setTipControl.selectedSegmentIndex, forKey: "selected_segment")
         
         NSUserDefaults.standardUserDefaults().synchronize()
+        print("saving values")
     }
     
     func refreshTipPercentages(){
-//        func animation() {
-//            if (billField.text ==  "0") || (billField.text == "") {
-//                UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-//                    self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 0)
-//                    
-//                    }, completion: nil)
-//                
-//            } else {
-//                UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-//                    self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -115)
-//                    }, completion: nil)
-//            }
-//        }
+
         
         
         var tipLow = NSUserDefaults.standardUserDefaults().stringForKey("tip_low")
@@ -146,7 +140,7 @@ class SettingsViewController: UIViewController {
     func selectSegment() {
         var selectedSegment = NSUserDefaults.standardUserDefaults().stringForKey("selected_segment")
         
-        if (selectedSegment == nil) { selectedSegment = "0" }
+        if (selectedSegment == nil) { selectedSegment = "20" }
         
         setTipControl.selectedSegmentIndex = Int(selectedSegment!)!
     }
