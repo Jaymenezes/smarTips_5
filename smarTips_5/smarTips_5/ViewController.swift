@@ -11,25 +11,47 @@ import UIKit
 class ViewController: UIViewController
     {
 
+    @IBOutlet weak var smarTitle: UILabel!
+    @IBOutlet weak var tipTiltle: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var tipPercentageView: UIView!
     
     var tipPercentages = [0.18, 0.20, 0.22]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view did load")
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let currencyFormatter = NSNumberFormatter()
+        currencyFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        currencyFormatter.locale = NSLocale.currentLocale()
+        
+//        smarTitle.hidden = false
+//        tipTiltle.hidden = false
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        
+        
+        billField.becomeFirstResponder()
+        billField.placeholder = currencyFormatter.currencySymbol
+        
+        refreshTipPercentages()
+        selectSegment()
+        calculate()
+        
+        
+
+        
         
         let now = NSDate()
         let before = NSUserDefaults.standardUserDefaults().objectForKey("saved_time") as? NSDate
         
         if (before != nil && now.timeIntervalSinceDate(before!) < 600){
-            billField.text = NSUserDefaults.standardUserDefaults().stringForKey("saved_amt")
+            billField.text = NSUserDefaults.standardUserDefaults().stringForKey("$saved_amt")
         }
         
     }
@@ -37,12 +59,7 @@ class ViewController: UIViewController
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         print("view will appear")
-        
-        billField.becomeFirstResponder()
-        
-        refreshTipPercentages()
-        selectSegment()
-        calculate()
+
         
     }
     
@@ -70,8 +87,24 @@ class ViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func animation() {
+        if (billField.text ==  "0") || (billField.text == "") {
+            UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 5)
+              
+                }, completion: nil)
+            
+        } else {
+            UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -115)
+                }, completion: nil)
+        }
+    }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
+        
+        animation()
         
         let currencyFormatter = NSNumberFormatter()
         currencyFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
@@ -85,6 +118,7 @@ class ViewController: UIViewController
         
         tipLabel.text = currencyFormatter.stringFromNumber(tip)!
         totalLabel.text = currencyFormatter.stringFromNumber(total)!
+
         
     
         
@@ -93,6 +127,8 @@ class ViewController: UIViewController
     
     @IBAction func onTap(sender: AnyObject)
     {view.endEditing(true)
+//        smarTitle.hidden = true
+//        tipTiltle.hidden = true
     }
     
     
@@ -123,20 +159,12 @@ class ViewController: UIViewController
         var tipLow = NSUserDefaults.standardUserDefaults().stringForKey("tip_low")
         var tipMid = NSUserDefaults.standardUserDefaults().stringForKey("tip_mid")
         var tipHigh = NSUserDefaults.standardUserDefaults().stringForKey("tip_high")
-        
-        //        print("TVC: tip percents without symbol before checking")
-        //        print(tipLow)
-        //        print(tipMid)
-        //        print(tipHigh)
+
         
         if (tipLow == nil ) { tipLow = "18.0" }
         if (tipMid == nil ) { tipMid = "20.0" }
         if (tipHigh == nil ) { tipHigh = "22.0" }
         
-        //        print("TVC: tip percents without symbol after checking")
-        //        print(tipLow)
-        //        print(tipMid)
-        //        print(tipHigh)
         
         tipPercentages[0] = NSString(string: tipLow!).doubleValue / 100.0
         tipPercentages[1] = NSString(string: tipMid!).doubleValue / 100.0
@@ -145,11 +173,7 @@ class ViewController: UIViewController
         tipLow! += "%"
         tipMid! += "%"
         tipHigh! += "%"
-        
-        //        print("TVC: tip percents with symbol")
-        //        print(tipLow)
-        //        print(tipMid)
-        //        print(tipHigh)
+
         
         tipControl.setTitle(tipLow, forSegmentAtIndex: 0)
         tipControl.setTitle(tipMid, forSegmentAtIndex: 1)

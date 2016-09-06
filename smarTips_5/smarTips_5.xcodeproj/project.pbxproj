@@ -15,8 +15,6 @@
 		CE09E1911C2761D60097CCDE /* smarTips_5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09E1901C2761D60097CCDE /* smarTips_5Tests.swift */; };
 		CE09E19C1C2761D60097CCDE /* smarTips_5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09E19B1C2761D60097CCDE /* smarTips_5UITests.swift */; };
 		CEE73ADB1C2BBAF4001B0660 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE73ADA1C2BBAF4001B0660 /* SettingsViewController.swift */; };
-		CEE73ADE1C2BD942001B0660 /* 30button.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE73ADC1C2BD942001B0660 /* 30button.png */; };
-		CEE73ADF1C2BD942001B0660 /* 60_button.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE73ADD1C2BD942001B0660 /* 60_button.png */; };
 		CEE73AE11C2BDC47001B0660 /* LOADING.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE73AE01C2BDC47001B0660 /* LOADING.png */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +50,6 @@
 		CE09E19B1C2761D60097CCDE /* smarTips_5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smarTips_5UITests.swift; sourceTree = "<group>"; };
 		CE09E19D1C2761D60097CCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE73ADA1C2BBAF4001B0660 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		CEE73ADC1C2BD942001B0660 /* 30button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 30button.png; path = ../../../30button.png; sourceTree = "<group>"; };
-		CEE73ADD1C2BD942001B0660 /* 60_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 60_button.png; path = ../../../60_button.png; sourceTree = "<group>"; };
 		CEE73AE01C2BDC47001B0660 /* LOADING.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOADING.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,8 +108,6 @@
 				CE09E1821C2761D60097CCDE /* Assets.xcassets */,
 				CE09E1841C2761D60097CCDE /* LaunchScreen.storyboard */,
 				CE09E1871C2761D60097CCDE /* Info.plist */,
-				CEE73ADC1C2BD942001B0660 /* 30button.png */,
-				CEE73ADD1C2BD942001B0660 /* 60_button.png */,
 				CEE73AE01C2BDC47001B0660 /* LOADING.png */,
 			);
 			path = smarTips_5;
@@ -247,9 +241,7 @@
 				CEE73AE11C2BDC47001B0660 /* LOADING.png in Resources */,
 				CE09E1861C2761D60097CCDE /* LaunchScreen.storyboard in Resources */,
 				CE09E1831C2761D60097CCDE /* Assets.xcassets in Resources */,
-				CEE73ADE1C2BD942001B0660 /* 30button.png in Resources */,
 				CE09E1811C2761D60097CCDE /* Main.storyboard in Resources */,
-				CEE73ADF1C2BD942001B0660 /* 60_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
