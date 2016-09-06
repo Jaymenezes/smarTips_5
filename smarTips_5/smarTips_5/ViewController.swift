@@ -30,6 +30,7 @@ class ViewController: UIViewController
     
     @IBOutlet weak var totalBySixLabel: UILabel!
     
+    @IBOutlet weak var totalBySevenLabel: UILabel!
     
     var tipPercentages = [0.18, 0.20, 0.22]
     
@@ -50,7 +51,7 @@ class ViewController: UIViewController
         totalByFourLabel.text = "$0.00"
         totalByFiveLabel.text = "$0.00"
         totalBySixLabel.text = "$0.00"
-       
+         totalBySevenLabel.text = "$0.00"
         
         
         billField.becomeFirstResponder()
@@ -112,13 +113,15 @@ class ViewController: UIViewController
     func animation() {
         if (billField.text ==  "0") || (billField.text == "") {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 5)
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 0)
               
                 }, completion: nil)
             
         } else {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -130)
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -50)
+                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, -50)
                 }, completion: nil)
         }
     }
@@ -144,7 +147,7 @@ class ViewController: UIViewController
         totalByFourLabel.text = currencyFormatter.stringFromNumber(total/4)!
         totalByFiveLabel.text = currencyFormatter.stringFromNumber(total/5)!
         totalBySixLabel.text = currencyFormatter.stringFromNumber(total/6)!
-
+        totalBySevenLabel.text = currencyFormatter.stringFromNumber(total/7)!
         
     
         
@@ -154,19 +157,19 @@ class ViewController: UIViewController
     func animateOnTap() {
         if (billField.text >= "1") {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, -200)
-                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, -200)
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0,-170)
+                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0,-170)
                 
                 }, completion: nil)
             
         } else {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
                 self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 0)
-                 self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 200)
+                 self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 0)
                 }, completion: nil)
         }
     }
-    
+
     
 
     @IBAction func onSwipeDown(sender: AnyObject) {
@@ -175,19 +178,18 @@ class ViewController: UIViewController
         if (billField.text >= "1") {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
                 
-                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 40)
-                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 40)
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 150)
+                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 150)
                 
                 }, completion: nil)
 
-        
-//        self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 50)
-//        print("swipe worked")
+
     }
     }
+    
     @IBAction func onTap(sender: AnyObject)
     {view.endEditing(true)
-        
+//        
         animateOnTap()
 //        smarTitle.hidden = true
 //        tipTiltle.hidden = true
@@ -218,6 +220,7 @@ class ViewController: UIViewController
         totalByFourLabel.text = currencyFormatter.stringFromNumber(total/4)!
         totalByFiveLabel.text = currencyFormatter.stringFromNumber(total/5)!
         totalBySixLabel.text = currencyFormatter.stringFromNumber(total/6)!
+        totalBySevenLabel.text = currencyFormatter.stringFromNumber(total/7)!
     }
     
     func selectSegment() {
