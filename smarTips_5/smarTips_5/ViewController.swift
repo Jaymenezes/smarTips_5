@@ -20,6 +20,16 @@ class ViewController: UIViewController
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tipPercentageView: UIView!
     @IBOutlet weak var splitOptionsView: UIView!
+    @IBOutlet weak var totalByTwoLabel: UILabel!
+
+    @IBOutlet weak var totalByThreeLabel: UILabel!
+    
+    @IBOutlet weak var totalByFourLabel: UILabel!
+    
+    @IBOutlet weak var totalByFiveLabel: UILabel!
+    
+    @IBOutlet weak var totalBySixLabel: UILabel!
+    
     
     var tipPercentages = [0.18, 0.20, 0.22]
     
@@ -35,6 +45,12 @@ class ViewController: UIViewController
 //        tipTiltle.hidden = false
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        totalByTwoLabel.text = "$0.00"
+        totalByThreeLabel.text = "$0.00"
+        totalByFourLabel.text = "$0.00"
+        totalByFiveLabel.text = "$0.00"
+        totalBySixLabel.text = "$0.00"
+       
         
         
         billField.becomeFirstResponder()
@@ -123,6 +139,11 @@ class ViewController: UIViewController
         
         tipLabel.text = currencyFormatter.stringFromNumber(tip)!
         totalLabel.text = currencyFormatter.stringFromNumber(total)!
+        totalByTwoLabel.text = currencyFormatter.stringFromNumber(total/2)!
+        totalByThreeLabel.text = currencyFormatter.stringFromNumber(total/3)!
+        totalByFourLabel.text = currencyFormatter.stringFromNumber(total/4)!
+        totalByFiveLabel.text = currencyFormatter.stringFromNumber(total/5)!
+        totalBySixLabel.text = currencyFormatter.stringFromNumber(total/6)!
 
         
     
@@ -187,8 +208,16 @@ class ViewController: UIViewController
         let tip = billAmount * tipPercentage
         let total = billAmount + tip
         
+ 
+        
+ 
         tipLabel.text = currencyFormatter.stringFromNumber(tip)!
         totalLabel.text = currencyFormatter.stringFromNumber(total)!
+        totalByTwoLabel.text = currencyFormatter.stringFromNumber(total/2)!
+        totalByThreeLabel.text = currencyFormatter.stringFromNumber(total/3)!
+        totalByFourLabel.text = currencyFormatter.stringFromNumber(total/4)!
+        totalByFiveLabel.text = currencyFormatter.stringFromNumber(total/5)!
+        totalBySixLabel.text = currencyFormatter.stringFromNumber(total/6)!
     }
     
     func selectSegment() {

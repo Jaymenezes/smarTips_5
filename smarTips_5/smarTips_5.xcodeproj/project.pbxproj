@@ -14,6 +14,8 @@
 		CE09E1861C2761D60097CCDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09E1841C2761D60097CCDE /* LaunchScreen.storyboard */; };
 		CE09E1911C2761D60097CCDE /* smarTips_5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09E1901C2761D60097CCDE /* smarTips_5Tests.swift */; };
 		CE09E19C1C2761D60097CCDE /* smarTips_5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09E19B1C2761D60097CCDE /* smarTips_5UITests.swift */; };
+		CEC1E5731D7ECCB600459C4B /* noun_492666_cc copy.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1E5711D7ECCB600459C4B /* noun_492666_cc copy.png */; };
+		CEC1E5741D7ECCB600459C4B /* noun_602617_cc copy.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1E5721D7ECCB600459C4B /* noun_602617_cc copy.png */; };
 		CEE73ADB1C2BBAF4001B0660 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE73ADA1C2BBAF4001B0660 /* SettingsViewController.swift */; };
 		CEE73AE11C2BDC47001B0660 /* LOADING.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE73AE01C2BDC47001B0660 /* LOADING.png */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,8 @@
 		CE09E1971C2761D60097CCDE /* smarTips_5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smarTips_5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE09E19B1C2761D60097CCDE /* smarTips_5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smarTips_5UITests.swift; sourceTree = "<group>"; };
 		CE09E19D1C2761D60097CCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC1E5711D7ECCB600459C4B /* noun_492666_cc copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "noun_492666_cc copy.png"; path = "Assets.xcassets/noun_492666_cc copy.png"; sourceTree = "<group>"; };
+		CEC1E5721D7ECCB600459C4B /* noun_602617_cc copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "noun_602617_cc copy.png"; path = "Assets.xcassets/noun_602617_cc copy.png"; sourceTree = "<group>"; };
 		CEE73ADA1C2BBAF4001B0660 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CEE73AE01C2BDC47001B0660 /* LOADING.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOADING.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +112,8 @@
 				CE09E1821C2761D60097CCDE /* Assets.xcassets */,
 				CE09E1841C2761D60097CCDE /* LaunchScreen.storyboard */,
 				CE09E1871C2761D60097CCDE /* Info.plist */,
+				CEC1E5711D7ECCB600459C4B /* noun_492666_cc copy.png */,
+				CEC1E5721D7ECCB600459C4B /* noun_602617_cc copy.png */,
 				CEE73AE01C2BDC47001B0660 /* LOADING.png */,
 			);
 			path = smarTips_5;
@@ -239,9 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE73AE11C2BDC47001B0660 /* LOADING.png in Resources */,
+				CEC1E5731D7ECCB600459C4B /* noun_492666_cc copy.png in Resources */,
 				CE09E1861C2761D60097CCDE /* LaunchScreen.storyboard in Resources */,
 				CE09E1831C2761D60097CCDE /* Assets.xcassets in Resources */,
 				CE09E1811C2761D60097CCDE /* Main.storyboard in Resources */,
+				CEC1E5741D7ECCB600459C4B /* noun_602617_cc copy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
