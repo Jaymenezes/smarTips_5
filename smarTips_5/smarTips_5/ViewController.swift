@@ -178,8 +178,8 @@ class ViewController: UIViewController
         if (billField.text >= "1") {
             UIView.animateWithDuration(1.5, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
                 
-                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 150)
-                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 150)
+                self.tipPercentageView.transform = CGAffineTransformMakeTranslation(0, 145)
+                self.splitOptionsView.transform = CGAffineTransformMakeTranslation(0, 145)
                 
                 }, completion: nil)
 
