@@ -33,7 +33,6 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Walkthrough](gif_smartip_new.gif)
 ![Walkthrough](gif_smartip_redesigned.gif) 
                 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
