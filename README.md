@@ -39,8 +39,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I'm recently took the IOS Codepath for universities. It was an amazing experience and I can tell i eveolved a lot, just by revamping my tip calculator project. I was able to debug and implement lots of functionalities which would be impossible a couple of months ago.
-Anyway, I'm really excited about the curriculum in this program, because of its focus on design prototyping. I've dedicated a lot of time and energy to the IOS University program, but cant' help to feel that previous knowledge stops me from being in the top of the class.. I feel that in this program focused on the design aspects of it i can get a lot more out. Thanks in advance.
+I have recently taken the IOS Codepath University. It was an amazing experience and I can tell i have evolved a lot, just by redesigning my tip calculator project. I was able to debug and implement lots of functionalities which would be impossible a couple of months ago.
+Anyway, I'm really excited about the curriculum in this program because of its focus on design prototyping. I've dedicated a lot of time and energy to the IOS University program, but cant' help to feel that previous knowledge stopped me from being a top student in the class.. I feel that in this design program, I can get improve even more. Thanks in advance.
 
 ## License
 
